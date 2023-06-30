@@ -1,17 +1,25 @@
-{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="{% static 'mystyles.css' %}">
   <title>{% block title %}{% endblock %}</title>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
 </head>
 <body>
-<div class="topnav">
-  <a href="/">HOME</a> |
-  <a href="/members">MEMBERS</a>
-</div>
-{% block content %}
-{% endblock %}
 
+<div class="container">
+  <ul class="nav bg-info">
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/">HOME</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/members">MEMBERS</a>
+    </li>
+  </ul>
+
+  {% block content %}
+  {% endblock %}
+</div>
 </body>
 </html>
