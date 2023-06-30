@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'my_tennis_club.urls'
@@ -114,10 +115,14 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
+STATIC_ROOT = BASE_DIR / 'productinofiles'
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-
+#Add this in your settings.py file:
+STATICFILES_DIRS = [
+    BASE_DIR / 'mystaticfiles'
+]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
